@@ -62,6 +62,7 @@ int main(int argc, char *argv[]) {
     int nevents = 0;
     int sumw_num = 0;
     Double_t sumofgenweight = 0;
+    std::ofstream outputfail("fail.txt",std::ofstream::app);
     Logger::get("main")->info("Checking input files");
     std::string basetree = "Events";
     for (int i = 2; i < argc; i++) {
@@ -73,6 +74,7 @@ int main(int argc, char *argv[]) {
             Logger::get("main")->critical("File {} does not exist or is not "
                                           "readable",
                                           argv[i]);
+            outputfail << "./vbfhmm " << argv[1] << " " << argv[i] << std::endl; 
             return 1;
         }
         // Get a list of all keys in the file
