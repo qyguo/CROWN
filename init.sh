@@ -43,6 +43,12 @@ else
         cd analysis_configurations
         ln -s ../hmm hmm
         cd -
+    elif [[ "$1" == "vbfhmm" && ! -d "${SCRIPT_DIR}/analysis_configurations/vbfhmm" ]]
+    then
+        echo "Linking analysis vbfhmm into ${SCRIPT_DIR}/analysis_configurations/vbfhmm"
+        cd analysis_configurations
+        ln -s ../vbfhmm vbfhmm
+        cd -
     elif [[ "$1" == "s" && ! -d "${SCRIPT_DIR}/analysis_configurations/s" ]]
     then
         echo "Cloning analysis s-channel into ${SCRIPT_DIR}/analysis_configurations/s"
