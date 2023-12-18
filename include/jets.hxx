@@ -2,6 +2,20 @@
 #define GUARDJETS_H
 
 namespace jet {
+ROOT::RDF::RNode 
+Calculate_JetDeltaEta(ROOT::RDF::RNode df, const std::string &outputname,
+                                 const std::string &particle_pts,
+                                 const std::string &particle_etas,
+                                 const std::string &particle_phis,
+                                 const std::string &particle_masses,
+                                 const std::string &goodjets_index);
+ROOT::RDF::RNode 
+Calculate_JetMass(ROOT::RDF::RNode df, const std::string &outputname,
+                                 const std::string &particle_pts,
+                                 const std::string &particle_etas,
+                                 const std::string &particle_phis,
+                                 const std::string &particle_masses,
+                                 const std::string &goodjets_index);
 ROOT::RDF::RNode
 VetoOverlappingJets(ROOT::RDF::RNode df, const std::string &output_col,
                     const std::string &jet_eta, const std::string &jet_phi,

@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     int nevents = 0;
     int sumw_num = 0;
     Double_t sumofgenweight = 0;
-    std::ofstream outputfail("fail.txt",std::ofstream::app);
+    std::ofstream outputfail("/afs/cern.ch/user/j/jiahua/CROWN/build/bin/fail.txt",std::ofstream::app);
     Logger::get("main")->info("Checking input files");
     std::string basetree = "Events";
     for (int i = 2; i < argc; i++) {
