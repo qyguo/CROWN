@@ -272,7 +272,7 @@ LVJet4 = Producer(
 )
 FilterNJets = Producer(
     name="FilterNJets",
-    call='basefunctions::FilterThreshold({df}, {input}, {vbf_njets}, "==", "Number of jets >= 2")',
+    call='basefunctions::FilterThreshold({df}, {input}, {vbf_njets}, ">=", "Number of jets >= 2")',
     input=[q.njets],
     output=None,
     scopes=["global","vbfhmm"],
