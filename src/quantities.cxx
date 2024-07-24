@@ -210,7 +210,8 @@ ROOT::RDF::RNode scalarPtSum(ROOT::RDF::RNode df, const std::string &outputname,
         outputname,
         [](const float &pt_1,
            const float &pt_2, const float &pt_3) {
-            if (pt_3 < 0.0 || pt_3 < 0.0 || pt_3 < 0.0)
+            //if (pt_3 < 0.0 || pt_3 < 0.0 || pt_3 < 0.0)
+            if (pt_1 < 0.0 || pt_2 < 0.0 || pt_3 < 0.0)
                 return default_float;
             auto const triple_lepton_pt = pt_1 + pt_2 + pt_3;
             return (float)triple_lepton_pt;

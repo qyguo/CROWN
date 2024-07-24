@@ -156,6 +156,46 @@ GoodJets_2022 = ProducerGroup(
     scopes=["global"],
     subproducers=[JetPtCut, JetEtaCut, JetIDCut, VetoOverlappingJetsWithMuons],
 )
+### GEN jet
+GEN_JetPtCut = Producer(
+    name="GEN_JetPtCut",
+    call="physicsobject::CutPt({df}, {input}, {output}, {min_genjet_pt})",
+    input=[nanoAOD.GenJet_pt],
+    output=[],
+    scopes=["vbfhmm"],
+)
+GEN_JetEtaCut = Producer(
+    name="GEN_JetEtaCut",
+    call="physicsobject::CutEta({df}, {input}, {output}, {max_genjet_eta})",
+    input=[nanoAOD.GenJet_eta],
+    output=[],
+    scopes=["vbfhmm"],
+)
+GEN_GoodJets = ProducerGroup(
+    name="GEN_GoodJets",
+    call="physicsobject::CombineMasks({df}, {output}, {input})",
+    input=[],
+    output=[q.good_genjets_mask],
+    scopes=["vbfhmm"],
+    subproducers=[GEN_JetPtCut, GEN_JetEtaCut],
+)
+
+## jet collection
+#GEN_JetCollection = Producer(
+#    name="GEN_JetCollection",
+#    call="jet::OrderJetsByPt({df}, {output}, {input})",
+#    input=[nanoAOD.GenJet_pt, q.good_genjets_mask],
+#    output=[q.good_genjet_collection],
+#    scopes=["vbfhmm"],
+#)
+NumberOfGoodGENJets = Producer(
+    name="NumberOfGoodGENJets",
+    call="quantities::NumberOfGoodObjects({df}, {output}, {input})",
+    input=[q.good_genjets_mask],
+    output=[q.ngenjets],
+    scopes=["vbfhmm"],
+)
+###
 
 GoodBJetsLoose = ProducerGroup(
     name="GoodBJetsLoose",
@@ -210,6 +250,36 @@ NumberOfGoodJets = Producer(
     output=[q.njets],
     scopes=["global"],
 )
+##
+Jet1_QGdiscriminator = Producer(
+    name="Jet1_QGdiscriminator",
+    call="quantities::ptErr({df}, {output}, 0, {input})",
+    input=[q.good_jet_collection, nanoAOD.Jet_QGdiscriminator],
+    output=[q.jet1_btagDeepFlavQG],
+    scopes=["vbfhmm"],
+)
+Jet2_QGdiscriminator = Producer(
+    name="Jet2_QGdiscriminator",
+    call="quantities::ptErr({df}, {output}, 1, {input})",
+    input=[q.good_jet_collection, nanoAOD.Jet_QGdiscriminator],
+    output=[q.jet2_btagDeepFlavQG],
+    scopes=["vbfhmm"],
+)
+Jet1_qgl = Producer(
+    name="Jet1_qgl",
+    call="quantities::ptErr({df}, {output}, 0, {input})",
+    input=[q.good_jet_collection, nanoAOD.Jet_qgl],
+    output=[q.jet1_qgl],
+    scopes=["vbfhmm"],
+)
+Jet2_qgl = Producer(
+    name="Jet2_qgl",
+    call="quantities::ptErr({df}, {output}, 1, {input})",
+    input=[q.good_jet_collection, nanoAOD.Jet_qgl],
+    output=[q.jet2_qgl],
+    scopes=["vbfhmm"],
+)
+###ah
 # jet collection
 JetCollection = Producer(
     name="JetCollection",
@@ -325,3 +395,11 @@ DiJetEta = Producer(
     output=[q.dijet_eta],
     scopes=["global","vbfhmm"],
 )
+
+#nSoftJet5 = Producer(
+#    name="nSoftJet5",
+#    call="basefunctions::rename<Int_t>({df}, {input}, {output})",
+#    input=[nanoAOD.SoftActivityJetNjets5],
+#    output=[q.nSoftJet5],
+#    scopes=["global","vbfhmm"],
+#)

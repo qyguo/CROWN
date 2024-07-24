@@ -107,7 +107,7 @@ def build_config(
                         "Flag_HBHENoiseIsoFilter",
                         "Flag_EcalDeadCellTriggerPrimitiveFilter",
                         "Flag_BadPFMuonFilter",
-                        # "Flag_BadPFMuonDzFilter", # only since nanoAODv9 available
+                        #"Flag_BadPFMuonDzFilter", # only since nanoAODv9 available
                         "Flag_eeBadScFilter",
                         "Flag_ecalBadCalibFilter",
                     ],
@@ -159,7 +159,6 @@ def build_config(
                             "flagname": "trg_single_mu24",
                             "hlt_path": "HLT_IsoMu24",
                             "ptcut": 26,
-                            #"ptcut": 24,#vbf change
                             "etacut": 2.5,
                             "filterbit": 3,
                             "trigger_particle_id": 13,
@@ -226,6 +225,21 @@ def build_config(
     configuration.add_config_parameters(
         ["global","gghmm","vbfhmm","e2m","m2m","eemm","mmmm","nnmm","fjmm","nnmm_dycontrol","nnmm_topcontrol"],
         {
+            "muon_RoccoR_files": EraModifier(
+                {
+                    "2016preVFP": "data/RoccoR_files/RoccoR2016aUL.txt",
+                    "2016postVFP": "data/RoccoR_files/RoccoR2016bUL.txt",
+                    "2017": "data/RoccoR_files/RoccoR2017UL.txt",
+                    "2018": "data/RoccoR_files/RoccoR2018UL.txt",
+                    "2022": "data/RoccoR_files/RoccoR2018UL.txt",
+                }
+            ),
+        }
+    )
+
+    configuration.add_config_parameters(
+        ["global","gghmm","vbfhmm","e2m","m2m","eemm","mmmm","nnmm","fjmm","nnmm_dycontrol","nnmm_topcontrol"],
+        {
             "min_muon_pt": 20, # ggh, vbf
             "max_muon_eta": 2.4, # ggh, vbf
             "muon_id": "Muon_mediumId", # ggh, vbf cut-based atm https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2#Medium_Muon
@@ -235,11 +249,11 @@ def build_config(
     configuration.add_config_parameters(
         ["e2m","m2m","eemm","mmmm","nnmm","fjmm","nnmm_dycontrol","nnmm_topcontrol"],
         {
-            #"max_muon_dxy": 0.05, # vh
-            #"max_muon_dz": 0.10, # vh
-            #"max_sip3d" : 8.0, # vh
+            "max_muon_dxy": 0.05, # vh
+            "max_muon_dz": 0.10, # vh
+            "max_sip3d" : 8.0, # vh
             #"min_lepmva" : 0.4, 
-            #"min_muon_mvaTTH" : 0.4,
+            "min_muon_mvaTTH" : 0.4,
         },
     )
     # electron base selection:
@@ -492,8 +506,8 @@ def build_config(
     configuration.add_config_parameters(
         "global",
         {
-            #"vetottH_max_nbjets_loose" : 1,
-            #"vetottH_max_nbjets_medium" : 0,
+            "vetottH_max_nbjets_loose" : 1,
+            "vetottH_max_nbjets_medium" : 0,
             # "vh_njets" : 3,
         }
     )
@@ -514,7 +528,7 @@ def build_config(
             "vbf_nmuons" : 2,
             "flag_DiMuonFromHiggs" : 1,
             "flag_LeptonChargeSumVeto" : 2, # sum lepton charge = 0
-            "lead_muon_pt" : 26,
+            #"lead_muon_pt" : 26,
             # "dimuon_pair" : 1, # dimuon_pair in [110,150] >=1
             "vbf_njets" : 2,
             "lead_jet_pt" : 35, #lead jet pt > 35
@@ -599,7 +613,7 @@ def build_config(
         "nnmm_dycontrol", # DY control region m(mumu) from 70 to 110
         {
             "vh_nnmm_nmuons" : 2,
-            #"min_met" : 50.0,
+            "min_met" : 50.0,
             "min_dimuon_mass" : 12,
             "flag_DiMuonFromCR" : 1,
             "flag_Ele_Veto" : 1,
@@ -618,6 +632,16 @@ def build_config(
             "flag_MetCut" : 1,
         }
     )
+    ###
+    configuration.add_config_parameters(
+        ["vbfhmm"],
+        {
+            "RoccoR_seed": 0,
+            "RoccoR_error_set": 0,
+            "RoccoR_error_member": 0,
+        }
+    )
+    ###
 
     """
     ## all scopes misc settings
@@ -633,6 +657,7 @@ def build_config(
         [
             event.SampleFlags,
             event.PUweights,
+            #event.PrefireWeight,
             event.Lumi,
             event.MetFilter,
             muons.BaseMuons, # vh
@@ -682,7 +707,7 @@ def build_config(
             event.VetoVHElectron,
             event.VetoVHMuon,
             jets.FilterNJets,
-            event.LeadMuonPtCut,
+            #event.LeadMuonPtCut,
             event.LeadJetPtCut,
             event.SubleadJetPtCut,
             event.DiJetMassCut,
@@ -711,7 +736,6 @@ def build_config(
             # vh the trigger-matched muon should have pT > 29 (26) for 2017 (2016,18)
             
             #
-            # scalefactors.MuonIDIso_SF, # TODO 3 muon SF
             p4.mu1_fromH_pt,
             p4.mu1_fromH_eta,
             p4.mu1_fromH_phi,
@@ -737,6 +761,24 @@ def build_config(
             
             p4.genmet_pt,
             p4.genmet_phi,
+
+            scalefactors.MuonIDIso_SF_vbfhmm, #2 mu from H
+            event.muon_fsrPhotonIdx_1,
+            event.muon_fsrPhotonIdx_2,
+            muons.Muon_pTErr_1,
+            muons.Muon_pTErr_2,
+
+            genparticles.dimuon_gen_collection,
+            genparticles.genMu1_H,
+            genparticles.genMu2_H,
+            p4.genmu1_fromH_pt,
+            p4.genmu1_fromH_eta,
+            p4.genmu1_fromH_phi,
+            p4.genmu1_fromH_mass,
+            p4.genmu2_fromH_pt,
+            p4.genmu2_fromH_eta,
+            p4.genmu2_fromH_phi,
+            p4.genmu2_fromH_mass,
 
         ],
     )
@@ -1347,6 +1389,7 @@ def build_config(
             q.lumi,
             nanoAOD.event,
             q.puweight,
+            #q.prefireweight,
             
             q.nmuons,
             q.njets,
@@ -1405,14 +1448,20 @@ def build_config(
             q.Flag_LeptonChargeSumVeto,
             q.Flag_DiMuonFromHiggs,
             triggers.GenerateSingleMuonTriggerFlagsForDiMuChannel.output_group,
+
+            # gen
             
             #
-            # q.id_wgt_mu_1,
-            # q.iso_wgt_mu_1,
-            # q.id_wgt_mu_2,
-            # q.iso_wgt_mu_2,
-            # q.id_wgt_mu_3,
-            # q.iso_wgt_mu_3,
+            q.id_wgt_mu_1,
+            q.iso_wgt_mu_1,
+            q.id_wgt_mu_2,
+            q.iso_wgt_mu_2,
+            q.mu1_fromH_ptErr,
+            q.mu2_fromH_ptErr,
+            q.pt_rc_1,
+            q.pt_rc_2,
+            #q.id_wgt_mu_3,
+            #q.iso_wgt_mu_3,
         ],
     )
     configuration.add_outputs(
@@ -1762,6 +1811,33 @@ def build_config(
             q.elemuCR_mass,
         ],
     )
+    #
+    if sample != "data":
+        configuration.add_modification_rule(
+            "vbfhmm",
+            AppendProducer(
+                producers=[event.ApplyRoccoRMC,],
+                samples=sample,
+                update_output=False,
+            ),
+        )
+        #configuration.add_outputs(
+        #    scopes,
+        #    [
+        #        q.pt_rc_1,
+        #        q.pt_rc_2,
+        #    ],
+        #)
+    elif sample == "data":
+        configuration.add_modification_rule(
+            "vbfhmm",
+            AppendProducer(
+                producers=[event.ApplyRoccoRData,],
+                samples=sample,
+                update_output=False,
+            ),
+        )
+    ###3252#
     
     # add genWeight for everything but data
     if sample != "data":
@@ -1823,6 +1899,27 @@ def build_config(
              #   genparticles.dimuon_gen_collection,
              #   genparticles.genMu1_H,
              #   genparticles.genMu2_H,
+                p4.genmu1_fromH_pt,
+                p4.genmu1_fromH_eta,
+                p4.genmu1_fromH_phi,
+                p4.genmu1_fromH_mass,
+                p4.genmu2_fromH_pt,
+                p4.genmu2_fromH_eta,
+                p4.genmu2_fromH_phi,
+                p4.genmu2_fromH_mass,
+            ],
+            samples=["data"],
+        ),
+    )
+    ##
+    configuration.add_modification_rule(
+        ["vbfhmm"],
+        RemoveProducer(
+            producers=[
+                genparticles.dimuon_gen_collection,
+                genparticles.genMu1_H,
+                genparticles.genMu2_H,
+                scalefactors.MuonIDIso_SF_vbfhmm,
                 p4.genmu1_fromH_pt,
                 p4.genmu1_fromH_eta,
                 p4.genmu1_fromH_phi,

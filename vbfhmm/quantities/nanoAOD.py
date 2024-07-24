@@ -83,6 +83,15 @@ Jet_PUID = NanoAODQuantity("Jet_puId")
 Jet_associatedGenJet = NanoAODQuantity("Jet_genJetIdx")
 #BJet_discriminator = NanoAODQuantity("Jet_btagDeepFlavB") # DeepFlavour
 BJet_discriminator = NanoAODQuantity("Jet_btagDeepB") # vh DeepCSV
+Jet_QGdiscriminator = NanoAODQuantity("Jet_btagDeepFlavQG")
+Jet_qgl = NanoAODQuantity("Jet_qgl") # Quark vs Gluon likelihood discriminator  
+nSoftJet5 = NanoAODQuantity("SoftActivityJetNjets5")
+#SoftActivityJetNjets5 = NanoAODQuantity("SoftActivityJetNjets5")
+nGenJet = NanoAODQuantity("nGenJet")
+GenJet_pt = NanoAODQuantity("GenJet_pt")
+GenJet_eta = NanoAODQuantity("GenJet_eta")
+GenJet_phi = NanoAODQuantity("GenJet_phi")
+GenJet_mass = NanoAODQuantity("GenJet_mass")
 
 Pileup_nTrueInt = NanoAODQuantity("Pileup_nTrueInt")
 rho = NanoAODQuantity("Pileup_pudensity")
