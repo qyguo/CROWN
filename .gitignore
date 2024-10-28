@@ -5,8 +5,6 @@ build/
 build*/
 log/
 logs/
-condor/
-vbfhmm/
 hmm_origin/
 # ignore all analysis in the config folder apart from the unittest and the template
 analysis_configurations/*
