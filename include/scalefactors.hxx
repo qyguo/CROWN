@@ -19,7 +19,8 @@ ROOT::RDF::RNode iso_rooworkspace(ROOT::RDF::RNode df, const std::string &pt,
 ROOT::RDF::RNode id(ROOT::RDF::RNode df, const std::string &pt,
                     const std::string &eta, const std::string &year_id,
                     const std::string &variation, const std::string &id_output,
-                    const std::string &sf_file, const std::string &idAlgorithm);
+                    const std::string &sf_file, const std::string &low_sf_file, 
+                    const std::string &idAlgorithm);
 ROOT::RDF::RNode id_vhmm(ROOT::RDF::RNode df, const std::string &p4, 
                     const std::string &year_id,
                     const std::string &variation, const std::string &id_output,
@@ -27,8 +28,8 @@ ROOT::RDF::RNode id_vhmm(ROOT::RDF::RNode df, const std::string &p4,
                     const std::string &idAlgorithm);
 ROOT::RDF::RNode iso(ROOT::RDF::RNode df, const std::string &pt,
                      const std::string &eta, const std::string &year_id,
-                     const std::string &variation,
-                     const std::string &iso_output, const std::string &sf_file,
+                     const std::string &variation, const std::string &iso_output, 
+                     const std::string &sf_file, const std::string &low_sf_file, 
                      const std::string &idAlgorithm);
 ROOT::RDF::RNode iso_vhmm(ROOT::RDF::RNode df, const std::string &p4, 
                      const std::string &year_id,

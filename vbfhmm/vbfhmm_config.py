@@ -158,22 +158,22 @@ def build_config(
                         {
                             "flagname": "trg_single_mu24",
                             "hlt_path": "HLT_IsoMu24",
-                            #"ptcut": 25,
-                            "ptcut": 24,#vbf change
+                            "ptcut": 26,
+                            #"ptcut": 24,#vbf change
                             "etacut": 2.5,
                             "filterbit": 3,
                             "trigger_particle_id": 13,
                             "max_deltaR_triggermatch": 0.4,
                         },
-                        {
-                            "flagname": "trg_single_mu27",
-                            "hlt_path": "HLT_IsoMu27",
-                            "ptcut": 28,
-                            "etacut": 2.5,
-                            "filterbit": 3,
-                            "trigger_particle_id": 13,
-                            "max_deltaR_triggermatch": 0.4,
-                        },
+                        #{
+                        #    "flagname": "trg_single_mu27",
+                        #    "hlt_path": "HLT_IsoMu27",
+                        #    "ptcut": 28,
+                        #    "etacut": 2.5,
+                        #    "filterbit": 3,
+                        #    "trigger_particle_id": 13,
+                        #    "max_deltaR_triggermatch": 0.4,
+                        #},
                     ],
                     "2017": [
                         {
@@ -235,11 +235,11 @@ def build_config(
     configuration.add_config_parameters(
         ["e2m","m2m","eemm","mmmm","nnmm","fjmm","nnmm_dycontrol","nnmm_topcontrol"],
         {
-            "max_muon_dxy": 0.05, # vh
-            "max_muon_dz": 0.10, # vh
-            "max_sip3d" : 8.0, # vh
+            #"max_muon_dxy": 0.05, # vh
+            #"max_muon_dz": 0.10, # vh
+            #"max_sip3d" : 8.0, # vh
             #"min_lepmva" : 0.4, 
-            "min_muon_mvaTTH" : 0.4,
+            #"min_muon_mvaTTH" : 0.4,
         },
     )
     # electron base selection:
@@ -492,8 +492,8 @@ def build_config(
     configuration.add_config_parameters(
         "global",
         {
-            "vetottH_max_nbjets_loose" : 1,
-            "vetottH_max_nbjets_medium" : 0,
+            #"vetottH_max_nbjets_loose" : 1,
+            #"vetottH_max_nbjets_medium" : 0,
             # "vh_njets" : 3,
         }
     )
@@ -599,7 +599,7 @@ def build_config(
         "nnmm_dycontrol", # DY control region m(mumu) from 70 to 110
         {
             "vh_nnmm_nmuons" : 2,
-            "min_met" : 50.0,
+            #"min_met" : 50.0,
             "min_dimuon_mass" : 12,
             "flag_DiMuonFromCR" : 1,
             "flag_Ele_Veto" : 1,
