@@ -165,42 +165,6 @@ def build_config(
                             "trigger_particle_id": 13,
                             "max_deltaR_triggermatch": 0.4,
                         },
-                        {
-                            "flagname": "trg_double_mu17",
-                            "hlt_path": "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8",
-                            "ptcut": 17,
-                            "etacut": 2.5,
-                            "filterbit": 3,
-                            "trigger_particle_id": 13,
-                            "max_deltaR_triggermatch": 0.4,
-                        },
-                        {
-                            "flagname": "trg_double_mu8",
-                            "hlt_path": "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8",
-                            "ptcut": 8,
-                            "etacut": 2.5,
-                            "filterbit": 3,
-                            "trigger_particle_id": 13,
-                            "max_deltaR_triggermatch": 0.4,
-                        },
-                        {
-                            "flagname": "trg_double_mu10",
-                            "hlt_path": "HLT_TripleMu_10_5_5_DZ",
-                            "ptcut": 10,
-                            "etacut": 2.5,
-                            "filterbit": 3,
-                            "trigger_particle_id": 13,
-                            "max_deltaR_triggermatch": 0.4,
-                        },
-                        {
-                            "flagname": "trg_double_mu12",
-                            "hlt_path": "HLT_TripleMu_12_10_5",
-                            "ptcut": 12,
-                            "etacut": 2.5,
-                            "filterbit": 3,
-                            "trigger_particle_id": 13,
-                            "max_deltaR_triggermatch": 0.4,
-                        },
                         #{
                         #    "flagname": "trg_single_mu27",
                         #    "hlt_path": "HLT_IsoMu27",
@@ -277,10 +241,10 @@ def build_config(
     configuration.add_config_parameters(
         ["global","gghmm","vbfhmm","e2m","m2m","eemm","mmmm","nnmm","fjmm","nnmm_dycontrol","nnmm_topcontrol"],
         {
-            "min_muon_pt": 5, # ggh, vbf
+            "min_muon_pt": 20, # ggh, vbf
             "max_muon_eta": 2.4, # ggh, vbf
             "muon_id": "Muon_mediumId", # ggh, vbf cut-based atm https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2#Medium_Muon
-            "muon_iso_cut": 0.4, # ggh, vbf PFIsoLoose dR=0.4 https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2#Particle_Flow_isolation
+            "muon_iso_cut": 0.25, # ggh, vbf PFIsoLoose dR=0.4 https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2#Particle_Flow_isolation
         },
     )
     configuration.add_config_parameters(
@@ -343,15 +307,6 @@ def build_config(
                     "2022": "data/jsonpog-integration/POG/MUO/2018_UL/muon_Z.json.gz",
                 }
             ),
-            "muon_low_sf_file": EraModifier(
-                {
-                    "2016preVFP": "data/jsonpog-integration/POG/MUO/2016preVFP_UL/muon_JPsi.json.gz",
-                    "2016postVFP": "data/jsonpog-integration/POG/MUO/2016postVFP_UL/muon_JPsi.json.gz",
-                    "2017": "data/jsonpog-integration/POG/MUO/2017_UL/muon_JPsi.json.gz",
-                    "2018": "data/jsonpog-integration/POG/MUO/2018_UL/muon_JPsi.json.gz",
-                    "2022": "data/jsonpog-integration/POG/MUO/2018_UL/muon_JPsi.json.gz",
-                }
-            ),
             "muon_id_sf_name": "NUM_MediumID_DEN_TrackerMuons",
             "muon_iso_sf_name": "NUM_TightRelIso_DEN_MediumID",
             "muon_sf_year_id": EraModifier(
@@ -363,7 +318,7 @@ def build_config(
                     "2022": "2018_UL",
                 }
             ),
-            "muon_sf_varation": "nominal",  # "sf" is nominal, "systup"/"systdown" are up/down variations
+            "muon_sf_varation": "sf",  # "sf" is nominal, "systup"/"systdown" are up/down variations
         },
     )
     # electron scale factors configuration
@@ -552,8 +507,8 @@ def build_config(
     configuration.add_config_parameters(
         "global",
         {
-            # "vetottH_max_nbjets_loose" : 1,
-            # "vetottH_max_nbjets_medium" : 0,
+            "vetottH_max_nbjets_loose" : 1,
+            "vetottH_max_nbjets_medium" : 0,
             # "vh_njets" : 3,
         }
     )
@@ -562,8 +517,8 @@ def build_config(
     configuration.add_config_parameters(
         ["gghmm","vbfhmm"],
         {
-            # "vetoVH_max_nmuons" : 2,
-            # "vetoVH_max_nelectrons" : 0,
+            "vetoVH_max_nmuons" : 2,
+            "vetoVH_max_nelectrons" : 0,
         }
     )
 
@@ -576,11 +531,11 @@ def build_config(
             "flag_LeptonChargeSumVeto" : 2, # sum lepton charge = 0
             #"lead_muon_pt" : 26,
             # "dimuon_pair" : 1, # dimuon_pair in [110,150] >=1
-            # "vbf_njets" : 2,
-            # "lead_jet_pt" : 35, #lead jet pt > 35
-            # "sublead_jet_pt" : 25, #sublead jet pt > 25
-            # "dijet_mass" : 400, #dijet mass > 400
-            # "dijet_eta" : 2.5, #jet-jet delta eta > 2.5
+            "vbf_njets" : 2,
+            "lead_jet_pt" : 35, #lead jet pt > 35
+            "sublead_jet_pt" : 25, #sublead jet pt > 25
+            "dijet_mass" : 400, #dijet mass > 400
+            "dijet_eta" : 2.5, #jet-jet delta eta > 2.5
         }
     )
 
@@ -703,7 +658,7 @@ def build_config(
         [
             event.SampleFlags,
             event.PUweights,
-            event.PrefireWeight, #v9 only
+            event.PrefireWeight,
             event.Lumi,
             event.MetFilter,
             muons.BaseMuons, # vh
@@ -718,8 +673,8 @@ def build_config(
             jets.NumberOfGoodJets,
             jets.NumberOfLooseB, # vh count loose bjets for ttH veto
             jets.NumberOfMediumB, # vh count medium bjets for ttH veto
-            # event.VetottHLooseB, # vh veto ttH no more than 1 loose bjet
-            # event.VetottHMediumB, # vh veto ttH no more than 1 medium bjet
+            event.VetottHLooseB, # vh veto ttH no more than 1 loose bjet
+            event.VetottHMediumB, # vh veto ttH no more than 1 medium bjet
             met.MetBasics, # build met vector for calculation
             met.BuildGenMetVector,
             jets.JetCollection,
@@ -750,14 +705,14 @@ def build_config(
             event.HiggsToDiMuonPair_p4, # select the dimuon pairs in [110,150] and order by pt
             ###
             event.DiMuonMassFromZVeto,# has dimuon from Z return mask equal to 0, otherwise return 1
-            # event.VetoVHElectron,
-            # event.VetoVHMuon,
-            # jets.FilterNJets,
-            # event.LeadMuonPtCut,
-            # event.LeadJetPtCut,
-            # event.SubleadJetPtCut,
-            # event.DiJetMassCut,
-            # event.DiJetEtaCut,
+            event.VetoVHElectron,
+            event.VetoVHMuon,
+            jets.FilterNJets,
+            #event.LeadMuonPtCut,
+            event.LeadJetPtCut,
+            event.SubleadJetPtCut,
+            event.DiJetMassCut,
+            event.DiJetEtaCut,
             lepton.LeptonChargeSumVeto,
             ###
             electrons.NumberOfBaseElectrons,
@@ -804,9 +759,9 @@ def build_config(
             p4.jet2_mass,
             jets.DiJetMass,
             jets.DiJetEta,
-            jets.Jet1_QGdiscriminator,#v9 only
-            jets.Jet2_QGdiscriminator,
-            # jets.nSoftJet5,
+            #jets.Jet1_QGdiscriminator,
+            #jets.Jet2_QGdiscriminator,
+            #jets.nSoftJet5,
             jets.Jet1_qgl,
             jets.Jet2_qgl,
             
@@ -830,8 +785,6 @@ def build_config(
 #
             muons.Muon_pTErr_1,
             muons.Muon_pTErr_2,
-            muons.muon1_iso,
-            muons.muon2_iso,
 
             genparticles.dimuon_gen_collection,
             genparticles.genMu1_H,
@@ -1439,11 +1392,22 @@ def build_config(
     configuration.add_outputs(
         scopes,
         [
+            q.is_data,
+            q.is_embedding,
+            q.is_top,
+            q.is_dyjets,
+            q.is_wjets,
+            q.is_diboson,
+            q.is_vhmm,
+            q.is_gghmm,
+            q.is_vbfhmm,
+            q.is_zjjew,
+            q.is_triboson,
             nanoAOD.run,
             q.lumi,
             nanoAOD.event,
             q.puweight,
-            q.prefireweight, #v9 only
+            q.prefireweight,
             
             q.nmuons,
             q.njets,
@@ -1531,12 +1495,7 @@ def build_config(
             q.jet2_qgl,
             #q.nSoftJet5,
             nanoAOD.nSoftJet5,
-            # nanoAOD.nGenJet,
-            # nanoAOD.Muon_pfRelIso04_all,
-            q.jet1_btagDeepFlavQG,#v9 only
-            q.jet2_btagDeepFlavQG,
-            q.muon1_iso,
-            q.muon2_iso,
+            nanoAOD.nGenJet,
         ],
     )
     configuration.add_outputs(

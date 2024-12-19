@@ -1,0 +1,1 @@
+/store/mc/RunIIAutumn18NanoAODv4/GluGluToContinToZZTo2mu2nu_13TeV_MCFM701_pythia8/NANOAODSIM/Nano14Dec2018_102X_upgrade2018_realistic_v16-v1/60000/3288AF2B-EC58-E34A-8510-6B42197E3B2F.root

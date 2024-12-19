@@ -1,0 +1,31 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_diboson.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_diboson.sh, /afs/cern.ch/user/j/jiahua/CROWN/build/bin/vbfhmm_config_all_resubv7_v2_diboson_2018, /afs/cern.ch/user/j/jiahua/CROWN/build/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_trigger/GluGluToContinToZZTo2mu2nu-mcfm701_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/GluGluToContinToZZTo2mu2nu-mcfm701_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/GluGluToContinToZZTo2mu2nu-mcfm701_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/GluGluToContinToZZTo2mu2nu-mcfm701_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/CFB82C9D-FC2F-5840-B84D-47E10370C135.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/5050D856-D7E6-A34D-A209-0EE070D73185.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/6C7D6643-7644-2F47-8083-9C109B8FDE39.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/0E95A670-0092-A142-9225-C7EB219FDAA5.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/EB7D7CF6-E8F3-F443-8D67-CF35F7340897.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/B89DACF8-0587-1745-A198-315FB4B0A3AB.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/2430000/45F31ED8-19C1-1B4A-A28A-6B2D9CF68F67.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/250000/883F8EC2-00BF-014F-8D63-47D81D583DFA.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/GluGluToContinToZZTo2mu2nu_TuneCP5_13TeV-mcfm701-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v2/260000/E8BE811F-4FFC-D44E-8477-94D97C4EE641.root
+Queue

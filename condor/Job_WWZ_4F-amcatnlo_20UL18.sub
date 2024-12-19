@@ -1,0 +1,23 @@
+universe = vanilla
+requirements = (OpSysAndVer =?= "CentOS7")
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_triboson.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_triboson.sh, /afs/cern.ch/user/j/jiahua/CROWN/build/bin/vbfhmm_config_triboson_2018, /afs/cern.ch/user/j/jiahua/CROWN/build/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/vbfhmm/WWZ_4F-amcatnlo_20UL18
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/WWZ_4F-amcatnlo_20UL18_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/WWZ_4F-amcatnlo_20UL18_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/WWZ_4F-amcatnlo_20UL18_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/A25FCCBC-6DCF-C14B-993C-E2237016B80E.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/2244966A-B557-E440-B79B-5487339993C6.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/270000/E581EBC4-9604-AE4A-B176-99B8428783B0.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/270000/B64E1EB1-7B6D-FE4C-904F-BD0343620F80.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/70000/E2C28693-66D8-4A46-80E5-E2713A7CBA27.root
+Queue

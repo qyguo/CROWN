@@ -1,0 +1,41 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh, /afs/cern.ch/user/j/jiahua/CROWN/build/bin/vbfhmm_config_all_resubv7_v2_top_2018, /afs/cern.ch/user/j/jiahua/CROWN/build/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_trigger/tZq_ll_4f_ckm_NLO-amcatnlo_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/tZq_ll_4f_ckm_NLO-amcatnlo_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/tZq_ll_4f_ckm_NLO-amcatnlo_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/tZq_ll_4f_ckm_NLO-amcatnlo_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/578AA8C4-5301-4843-9AE8-A389A95F07CC.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/1EFCD6BE-816C-4A47-B751-97BCF47E8B29.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/D6C39E22-7F00-CA46-8631-C651FEAC1740.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/94BFA690-E70E-C24B-BBC6-EF30CAD4F797.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/A158A08F-F5AF-2D42-B982-EF1784024E12.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/835A69BE-1147-474D-8015-89B134EE8DC2.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/5867358B-24FC-D94B-9D41-F25C8718DB8C.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/8FE20B43-F021-D24C-8B8F-8E7269BF0D17.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/68A038E9-D0D4-C94C-998A-B34BB3BBD0B5.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/D540490B-5700-3343-85E5-77D7EC5314C4.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/4305F97E-674F-5B42-B7A3-00D27D801A2C.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/32A1E9FA-2E94-864A-8873-9E629EAD3D1B.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/1B6AA322-1BBF-934A-BCA5-9D3C9D9F547A.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/tZq_ll_4f_ckm_NLO_TuneCP5_13TeV-amcatnlo-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/2540000/C3C6DD99-80B8-3848-980C-3614B0DF72C7.root
+Queue

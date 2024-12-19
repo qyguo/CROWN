@@ -1,0 +1,31 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh, /afs/cern.ch/user/j/jiahua/CROWN/build/bin/vbfhmm_config_all_resubv7_v2_top_2018, /afs/cern.ch/user/j/jiahua/CROWN/build/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_trigger/SingleMuon_UL18A
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/SingleMuon_UL18A_resub4_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/SingleMuon_UL18A_resub4_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/SingleMuon_UL18A_resub4_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+
+
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/049D7B08-979F-E743-B9BE-4B37EEFD1B47.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/547A9EA0-EF2E-3548-807F-4A06665AF500.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/0EC110C4-967D-AE49-A2F5-DD7C0369FCBA.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/960A6D55-6AE8-5245-B6E3-5CDEE4B986F2.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/C1FD87EB-3052-524A-8DAD-1C95A6EABBF0.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/4C2086CE-3443-0841-9181-D10E788033D3.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/2550000/94888D6C-D93A-9F45-9C3F-5B7FC06B5E69.root 
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/data/Run2018A/SingleMuon/NANOAOD/UL2018_MiniAODv2_NanoAODv9-v2/30000/208681D0-0FB6-8A4A-A05A-ED10EDBDFD25.root 
+Queue

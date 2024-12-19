@@ -1,0 +1,17 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_dyjets.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_dyjets.sh, /afs/cern.ch/user/j/jiahua/CROWN/build_v7/bin/vbfhmm_config_all_resubv7_v2_dyjets_2018, /afs/cern.ch/user/j/jiahua/CROWN/build_v7/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_nocut/_UL
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/_UL_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/_UL_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/_UL_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = root://cms-xrd-global.cern.ch/2024/11/14 09:39:22 ERROR DAS QL ERROR, query=file dataset = instance = prod/global, idx=4, msg=unable to parse DAS query
+Queue
+input_name = root://cms-xrd-global.cern.ch/ERROR: das parser error: DAS QL ERROR, query=file dataset = instance = prod/global, idx=4, msg=unable to parse DAS query
+Queue

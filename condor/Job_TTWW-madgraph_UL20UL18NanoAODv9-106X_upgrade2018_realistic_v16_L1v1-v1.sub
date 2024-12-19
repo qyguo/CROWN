@@ -1,0 +1,19 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_top.sh, /afs/cern.ch/user/j/jiahua/CROWN/build/bin/vbfhmm_config_all_resubv7_v2_top_2018, /afs/cern.ch/user/j/jiahua/CROWN/build/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_trigger/TTWW-madgraph_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/TTWW-madgraph_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/TTWW-madgraph_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/TTWW-madgraph_UL20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/TTWW_TuneCP5_13TeV-madgraph-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/270000/CCC9014F-BE10-E24E-AAF6-38C4F53BB2B9.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/TTWW_TuneCP5_13TeV-madgraph-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/280000/6357F8AA-34A7-8248-8159-1C1340FC34E2.root
+Queue
+input_name = root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/TTWW_TuneCP5_13TeV-madgraph-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/120000/C78A2D44-0F6A-CE41-BBBF-13580AD000AA.root
+Queue

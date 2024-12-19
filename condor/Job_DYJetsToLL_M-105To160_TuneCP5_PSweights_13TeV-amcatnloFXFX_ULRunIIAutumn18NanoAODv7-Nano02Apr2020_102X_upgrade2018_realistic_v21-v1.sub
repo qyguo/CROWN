@@ -1,0 +1,249 @@
+universe = vanilla
+MY.WantOS = "el7"
+Executable = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_dyjets_v7.sh
+should_transfer_files = YES
+Transfer_Input_Files = /afs/cern.ch/user/j/jiahua/CROWN/condor/Job_test_dyjets_v7.sh, /afs/cern.ch/user/j/jiahua/CROWN/build_v7/bin/vbfhmm_config_all_resubv7_dyjets_2018, /afs/cern.ch/user/j/jiahua/CROWN/build_v7/libCROWNLIB.so
+Proxy_path = /afs/cern.ch/user/j/jiahua/proxy/x509up_u139833
+output_path = /eos/user/j/jiahua/MC_UL18_trigger/DYJetsToLL_M-105To160_TuneCP5_PSweights_13TeV-amcatnloFXFX_ULRunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1
+arguments = $(Proxy_path) $(output_path) $(input_name) $(ClusterID) $(ProcId)
+Output = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/DYJetsToLL_M-105To160_TuneCP5_PSweights_13TeV-amcatnloFXFX_ULRunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1_$(ClusterId)_$(ProcId).out
+Error = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/DYJetsToLL_M-105To160_TuneCP5_PSweights_13TeV-amcatnloFXFX_ULRunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1_$(ClusterId)_$(ProcId).err
+Log = /afs/cern.ch/user/j/jiahua/CROWN/condor/Jobs/DYJetsToLL_M-105To160_TuneCP5_PSweights_13TeV-amcatnloFXFX_ULRunIIAutumn18NanoAODv7-Nano02Apr2020_102X_upgrade2018_realistic_v21-v1_$(ClusterId)_$(ProcId).log
+request_cpus = 1
++JobFlavour = "workday"
+input_name = /eos/user/j/jiahua/DY105FXFXraw/1D157102-EAC8-C845-8ECD-68AE7ED29BF3.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/105FE70B-0C22-7B44-9A86-7C8902D7BC81.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/7153F96C-EFA4-7747-AE32-8B273AF506DD.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/05C79EA0-3860-E34E-AED1-21DFE0242E60.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F33C8E32-4AEC-A545-A097-50468F77F14F.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/59DA3913-1ECB-DE4A-98E9-42EA442B1192.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9A618FC1-86F6-C941-9AFC-148BCCAB01B8.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/5CB782D5-D71E-1F44-B2E2-677591E468DD.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8DD1E562-BBA1-4447-A7FA-4DB75B112D11.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F789745F-BBA6-0F4A-B7EE-C5A09D024DCA.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/31D336C0-987E-604F-9915-9CFF79529002.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/21806DFA-29A3-3F4E-9321-89750DC2215C.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/AEEADA70-1651-364C-A1C6-1C125EC1ADCC.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/BB54C2BE-D615-AF48-9CA7-D72187221CC9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F0248CA7-58CD-314A-879B-59BEC6D74C02.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/111718C0-2ECD-4E44-8728-110F0B1E9915.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/B82064C7-A637-B04A-ADAB-847BC0EC34FD.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/A6D9A62F-C4AA-FA44-9942-295AF447B7F3.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/DBE26F88-7171-104F-938B-B3D619FA8DDD.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/D155D71E-30C7-8C46-AC93-753B97637316.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/3FA5EC69-F6D5-8C46-9165-37FCA35767A2.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/4365AAEB-F5DB-DD45-8D26-145B2D811484.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C36EA839-0A90-C648-BE19-C7E8F0CE8594.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9C2A9F80-3F1B-554C-9F3D-C05781A7B6A4.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/99B3DF05-55F2-1240-B783-C55B060EDDB8.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/FA6BBDF8-26E4-CD43-8C31-B8D7E5D34F4B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E61B3997-96B3-AF40-8DE5-6B0B86A57DF7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F95847B5-3097-F64B-AC78-F803D7EF8210.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/29718311-27E1-3B4A-A465-3557E01E4A19.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/98CE67E1-FB62-5D46-9F7A-6A92E1C6ABE7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/0FB4D4BF-680E-134B-A3D7-B6B6460AD888.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C88C9DAC-0E4C-6945-AB92-F6C9E2F5A050.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/23D80AC0-FFD0-EE47-8D95-9972CB276216.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/5125B2F1-82B9-6943-9498-F4C095F7C9A1.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/24712414-F6C6-F54E-A04B-51949DC7BA04.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C46E945D-8608-F045-B3BC-8D0AF6B05ABD.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/7A0A1A13-2DA0-704B-8AA6-BE7DA08705B5.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/31F3213A-699C-E842-867B-E4922060008B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C650FB86-A218-2F40-893F-D861EC119B02.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9E914F54-3F7D-6E42-A1ED-222B549F0DB1.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/442C5E5C-7671-8C47-A6D4-03F6D2D0C220.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E55B1C7A-7378-FD4C-AA3C-9E711086D4F8.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/3AA64961-F113-0546-A29C-A2DE339DB0CF.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/FCE83559-F56C-F74D-8A93-4B6C6C6CB7E8.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/47DDE608-AAC5-014D-B5A7-621102386E55.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/92856487-61E6-EB4B-B342-025A43EA0B13.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/DFADAD4C-F211-2E4E-AD44-F413248EE55A.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/4700ED1B-C63A-1944-AE33-80EC166232B7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/7805204A-3B49-3147-9B8D-1D0982598BD1.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/24AE3574-AB00-E74E-9CA8-FDC08A6EBDBE.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/313DD137-8828-744C-9B4F-D3158238B17B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F20C99F1-784B-3544-859C-EF7F70E43BA9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/A6AF64EE-E8C9-A847-A867-C3BAD6FC7F48.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/04046C72-F273-114A-B34C-0B1085E134BB.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/EEE8706C-33B9-7E42-968F-01C2EC23C75F.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/AD99BA0C-993E-6D46-8F66-80415CA75298.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/6BC51EE8-BB0E-D04A-8653-F6AE2C55E8F2.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/FC2C68F8-661E-2E4C-B94B-3F97C779E4B9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/0F1B0243-7DF3-CB43-A224-9C519368AC9A.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/A957F759-E2FB-CA4F-A3AA-F3E899C396FE.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/FCF6569B-9B1E-264D-A650-BACAB45FDF97.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8C263605-1E72-4747-8D3A-37ED6A6E135F.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/493F2AE3-E100-EF4B-8312-9C2279F025A9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/14D512BA-B1E1-5D4D-B511-C9860140EC6B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/FBA0B9E7-0EB4-1344-B1A3-7E2B7638D2FF.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/75B67C45-B0CD-D24E-A17B-B41FB152BD86.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/47F459D6-FD14-104F-BDAC-58291E870C1B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9CB0B74D-F693-044A-A05D-E07EEA0AC239.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/A1FC88E8-D342-C742-A0D8-D8E98576AAFB.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/5E69F329-49BF-224A-88EC-BC7074D05AD9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/ECE54FE0-F5CD-CC41-A357-2FB129B73807.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/94C8B5FD-4A42-2C4F-85FA-C927F7E35669.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/46692253-B39F-C443-919A-8E135E1CE4CE.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C3B274CE-C2C9-2143-A3C5-1958F7AF09C1.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/6FBE4167-770B-8149-BA9B-C377A77D934E.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/4064CE21-4F33-E84E-B4BD-F6325B9AB041.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/522D7C27-49D2-1B4B-974F-8560168DB7D0.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/1662A3EA-28C5-D84F-945D-5F75F0FC798A.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/4AB34604-EEF1-2F4D-A518-38237F45A613.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/ACDECE61-510D-4B47-9AFF-DDED1665626D.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/906E4B14-285F-5243-86A3-D3E0F3E6E2D1.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/10A2E43F-3E2A-B742-A180-17367C83173A.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/53A44888-5159-D34D-A136-A9745E7BA156.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8AAC34D8-AD64-6347-9DF3-A848A73B1D24.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/22F8F430-7252-6D40-BBE3-94313AF30A7F.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/D6C0E269-0477-D643-967C-78CCB55C3A1C.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/0D86F99E-CBB9-5B44-859F-6BE075B553F7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/854262B1-17FE-154F-A9C6-AA447735F539.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/6691EC00-A88E-004E-A3BF-2C3FC033AE64.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/3922254C-43AE-3C43-8E7A-5F7E78344CEB.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/B6465F02-DE12-5948-9C23-2941FEA61EBB.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E3EFBBB8-8030-954B-8185-72CBEA267EAF.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9DE64E9F-B821-FC4B-AFF8-5FBA12CC2316.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/3928B74C-7B1E-964F-837A-8BDF48A7A53E.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/2424CE9E-4E12-F34B-A3AA-DF51A0A81999.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/97503C82-AD49-AF4C-B723-D363F9F96290.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/CBBF7CDB-7294-C447-9D77-31D294017E9D.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/F61EDD9B-E442-2A44-9D32-177B1CFBE116.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8047D069-3D62-7B4D-B8EA-15D5DB4C2C43.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/335A5494-C2E4-3240-AA7A-CE17A467A1D7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8F4F3AC5-AF5F-7641-8215-4F57859A20C7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/9399B1DD-F59B-7747-9E6E-28EEE8CC8878.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/904E6C1B-D3F6-CF48-B342-7619F88FA0F9.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/28EB1A35-53D9-EC47-A76F-0E2B4DC0161E.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/C4C4518C-807B-6644-B43D-5E78DC57B0F7.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/A50D1C54-B9EB-3747-BB8F-36CB41D5096F.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E4DDB71C-FF1A-8444-815E-B46F91BA6C44.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/8EC68A31-907F-FB48-96AC-0DA290AE1ED3.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/AD63A57C-24E9-C84C-93BA-DE5ABFF7E57D.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/957ED6BA-A927-DF49-81E6-363A338135FA.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/7A08F0A0-703E-6A46-A68C-F414B4875531.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/5C76601B-3C68-E44B-9700-97036837099B.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/96F6A9D1-8E98-044C-A417-CC1F984E12D8.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/79C37CAD-025F-8C4E-8759-AE7833274D91.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E6592349-98ED-1048-AA50-A48FABC90F9A.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/6E36B164-12D2-EA48-AD05-460FAA86BCE3.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/D746E75D-82C6-6444-8B30-932284AFD833.root
+Queue
+input_name = /eos/user/j/jiahua/DY105FXFXraw/E83A47A3-5FE2-E54F-A759-F8403A15014E.root
+Queue

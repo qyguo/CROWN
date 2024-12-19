@@ -1,0 +1,1 @@
+./vbfhmm_config_data_2018  root://cms-xrd-global.cern.ch//store/mc/RunIISummer20UL18NanoAODv9/TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/NANOAODSIM/106X_upgrade2018_realistic_v16_L1v1-v1/270000/77872E8A-7486-8746-9A6C-C8D05D17CC8C.root 

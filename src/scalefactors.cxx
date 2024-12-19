@@ -114,11 +114,11 @@ ROOT::RDF::RNode id(ROOT::RDF::RNode df, const std::string &pt,
             // shifts below good tau pt selection
             if (pt >= 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator->evaluate(
-                    {year_id, std::abs(eta), pt, variation});
+                    {std::abs(eta), pt, variation});
             }
             if (pt >= 0.0 && pt < 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator_low->evaluate(
-                    {year_id, std::abs(eta), pt, variation});
+                    {std::abs(eta), pt, variation});
             }
             return sf;
         },
@@ -194,9 +194,9 @@ ROOT::RDF::RNode iso(ROOT::RDF::RNode df, const std::string &pt,
             double sf = 1.;
             // preventing muons with default values due to tau energy correction
             // shifts below good tau pt selection
-            if (pt >= 0.0 && std::abs(eta) >= 0.0) {
+            if (pt >= 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator->evaluate(
-                    {year_id, std::abs(eta), pt, variation});
+                    {std::abs(eta), pt, variation});
             }
             if (pt >= 0.0 && pt < 15.0 && std::abs(eta) >= 0.0) {
                 sf = 1.0;

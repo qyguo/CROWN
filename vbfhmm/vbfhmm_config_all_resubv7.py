@@ -108,7 +108,7 @@ def build_config(
                         "Flag_HBHENoiseIsoFilter",
                         "Flag_EcalDeadCellTriggerPrimitiveFilter",
                         "Flag_BadPFMuonFilter",
-                        "Flag_BadPFMuonDzFilter", # only since nanoAODv9 available
+                        # "Flag_BadPFMuonDzFilter", # only since nanoAODv9 available
                         "Flag_eeBadScFilter",
                         "Flag_ecalBadCalibFilter",
                     ],
@@ -174,7 +174,7 @@ def build_config(
                             "trigger_particle_id": 13,
                             "max_deltaR_triggermatch": 0.4,
                         },
-                        {
+                                                {
                             "flagname": "trg_double_mu8",
                             "hlt_path": "HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8",
                             "ptcut": 8,
@@ -552,8 +552,8 @@ def build_config(
     configuration.add_config_parameters(
         "global",
         {
-            # "vetottH_max_nbjets_loose" : 1,
-            # "vetottH_max_nbjets_medium" : 0,
+            "vetottH_max_nbjets_loose" : 1,
+            "vetottH_max_nbjets_medium" : 0,
             # "vh_njets" : 3,
         }
     )
@@ -562,8 +562,8 @@ def build_config(
     configuration.add_config_parameters(
         ["gghmm","vbfhmm"],
         {
-            # "vetoVH_max_nmuons" : 2,
-            # "vetoVH_max_nelectrons" : 0,
+            "vetoVH_max_nmuons" : 2,
+            "vetoVH_max_nelectrons" : 0,
         }
     )
 
@@ -576,7 +576,7 @@ def build_config(
             "flag_LeptonChargeSumVeto" : 2, # sum lepton charge = 0
             #"lead_muon_pt" : 26,
             # "dimuon_pair" : 1, # dimuon_pair in [110,150] >=1
-            # "vbf_njets" : 2,
+            "vbf_njets" : 2,
             # "lead_jet_pt" : 35, #lead jet pt > 35
             # "sublead_jet_pt" : 25, #sublead jet pt > 25
             # "dijet_mass" : 400, #dijet mass > 400
@@ -703,7 +703,7 @@ def build_config(
         [
             event.SampleFlags,
             event.PUweights,
-            event.PrefireWeight, #v9 only
+            # event.PrefireWeight, #v9 only
             event.Lumi,
             event.MetFilter,
             muons.BaseMuons, # vh
@@ -718,8 +718,8 @@ def build_config(
             jets.NumberOfGoodJets,
             jets.NumberOfLooseB, # vh count loose bjets for ttH veto
             jets.NumberOfMediumB, # vh count medium bjets for ttH veto
-            # event.VetottHLooseB, # vh veto ttH no more than 1 loose bjet
-            # event.VetottHMediumB, # vh veto ttH no more than 1 medium bjet
+            event.VetottHLooseB, # vh veto ttH no more than 1 loose bjet
+            event.VetottHMediumB, # vh veto ttH no more than 1 medium bjet
             met.MetBasics, # build met vector for calculation
             met.BuildGenMetVector,
             jets.JetCollection,
@@ -750,9 +750,9 @@ def build_config(
             event.HiggsToDiMuonPair_p4, # select the dimuon pairs in [110,150] and order by pt
             ###
             event.DiMuonMassFromZVeto,# has dimuon from Z return mask equal to 0, otherwise return 1
-            # event.VetoVHElectron,
-            # event.VetoVHMuon,
-            # jets.FilterNJets,
+            event.VetoVHElectron,
+            event.VetoVHMuon,
+            jets.FilterNJets,
             # event.LeadMuonPtCut,
             # event.LeadJetPtCut,
             # event.SubleadJetPtCut,
@@ -804,9 +804,9 @@ def build_config(
             p4.jet2_mass,
             jets.DiJetMass,
             jets.DiJetEta,
-            jets.Jet1_QGdiscriminator,#v9 only
-            jets.Jet2_QGdiscriminator,
-            # jets.nSoftJet5,
+            # jets.Jet1_QGdiscriminator,#v9 only
+            # jets.Jet2_QGdiscriminator,
+            # # jets.nSoftJet5,
             jets.Jet1_qgl,
             jets.Jet2_qgl,
             
@@ -1443,7 +1443,7 @@ def build_config(
             q.lumi,
             nanoAOD.event,
             q.puweight,
-            q.prefireweight, #v9 only
+            # q.prefireweight, #v9 only
             
             q.nmuons,
             q.njets,
@@ -1533,8 +1533,8 @@ def build_config(
             nanoAOD.nSoftJet5,
             # nanoAOD.nGenJet,
             # nanoAOD.Muon_pfRelIso04_all,
-            q.jet1_btagDeepFlavQG,#v9 only
-            q.jet2_btagDeepFlavQG,
+            # q.jet1_btagDeepFlavQG,#v9 only
+            # q.jet2_btagDeepFlavQG,
             q.muon1_iso,
             q.muon2_iso,
         ],
