@@ -97,7 +97,7 @@ ROOT::RDF::RNode iso_rooworkspace(ROOT::RDF::RNode df, const std::string &pt,
  */
 ROOT::RDF::RNode id(ROOT::RDF::RNode df, const std::string &pt,
                     const std::string &eta, const std::string &year_id,
-                    const std::string &variation, const std::string &id_output,
+                    const std::string &variation, const std::string &variation_low, const std::string &id_output,
                     const std::string &sf_file, const std::string &low_sf_file, 
                     const std::string &idAlgorithm) {
 
@@ -107,18 +107,18 @@ ROOT::RDF::RNode id(ROOT::RDF::RNode df, const std::string &pt,
     auto evaluator_low = correction::CorrectionSet::from_file(low_sf_file)->at(idAlgorithm);
     auto df1 = df.Define(
         id_output,
-        [evaluator, evaluator_low, year_id, variation](const float &pt, const float &eta) {
+        [evaluator, evaluator_low, year_id, variation, variation_low](const float &pt, const float &eta) {
             Logger::get("muonIdSF")->debug("ID - pt {}, eta {}", pt, eta);
             double sf = 1.;
             // preventing muons with default values due to tau energy correction
             // shifts below good tau pt selection
             if (pt >= 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator->evaluate(
-                    {std::abs(eta), pt, variation});
+                    {year_id, std::abs(eta), pt, variation});
             }
-            if (pt >= 0.0 && pt < 15.0 && std::abs(eta) >= 0.0) {
+            if (pt >= 2.0 && pt < 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator_low->evaluate(
-                    {std::abs(eta), pt, variation});
+                    {std::abs(eta), pt, variation_low});
             }
             return sf;
         },
@@ -181,7 +181,7 @@ ROOT::RDF::RNode id_vhmm(ROOT::RDF::RNode df, const std::string &p4,
 ROOT::RDF::RNode iso(ROOT::RDF::RNode df, const std::string &pt,
                      const std::string &eta, const std::string &year_id,
                      const std::string &variation, const std::string &iso_output,
-                    const std::string &sf_file, const std::string &low_sf_file, 
+                    const std::string &sf_file, 
                     const std::string &idAlgorithm) {
 
     Logger::get("muonIsoSF")->debug("Setting up functions for muon iso sf");
@@ -196,7 +196,7 @@ ROOT::RDF::RNode iso(ROOT::RDF::RNode df, const std::string &pt,
             // shifts below good tau pt selection
             if (pt >= 15.0 && std::abs(eta) >= 0.0) {
                 sf = evaluator->evaluate(
-                    {std::abs(eta), pt, variation});
+                    {year_id, std::abs(eta), pt, variation});
             }
             if (pt >= 0.0 && pt < 15.0 && std::abs(eta) >= 0.0) {
                 sf = 1.0;
